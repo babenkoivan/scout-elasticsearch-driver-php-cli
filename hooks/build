@@ -1,0 +1,2 @@
+#!/bin/bash
+docker build --build-arg PHP_VERSION=$PHP_VERSION --build-arg LARAVEL_VERSION=$LARAVEL_VERSION -f $DOCKERFILE_PATH -t $IMAGE_NAME .
