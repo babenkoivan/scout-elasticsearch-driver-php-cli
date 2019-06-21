@@ -10,7 +10,7 @@ RUN docker-php-ext-install bcmath pdo_mysql
 RUN wget https://getcomposer.org/installer && \
     php installer --install-dir=/usr/local/bin/ --filename=composer && \
     rm installer && \
-    composer global require hirak/prestissimo
+    composer global require --no-interaction --prefer-dist --update-no-dev hirak/prestissimo
 
 # Copy shell scripts
 COPY bin /usr/local/bin/
