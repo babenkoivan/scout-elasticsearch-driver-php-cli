@@ -24,10 +24,3 @@ RUN composer create-project --no-interaction --prefer-dist laravel/laravel . $LA
 RUN rm -rf database && mkdir -p database/factories
 COPY database database
 COPY app app
-
-# Install Scout Elasticsearch Driver
-RUN composer require --no-interaction --prefer-dist babenkoivan/scout-elasticsearch-driver
-
-# Publish configs
-RUN php artisan vendor:publish --provider="Laravel\Scout\ScoutServiceProvider" && \
-    php artisan vendor:publish --provider="ScoutElastic\ScoutElasticServiceProvider"
